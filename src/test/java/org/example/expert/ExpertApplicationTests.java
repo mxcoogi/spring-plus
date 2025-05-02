@@ -7,11 +7,16 @@ import org.example.expert.domain.auth.dto.request.SignupRequest;
 import org.example.expert.domain.auth.dto.response.SigninResponse;
 import org.example.expert.domain.auth.service.AuthService;
 import org.example.expert.domain.todo.repository.TodoRepository;
+import org.example.expert.domain.todo.service.TodoService;
 import org.example.expert.domain.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,6 +29,8 @@ class ExpertApplicationTests {
     private JwtUtil jwtUtil;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private TodoService todoService;
 
     @Test
     void contextLoads() {
@@ -53,6 +60,16 @@ class ExpertApplicationTests {
 
         userRepository.deleteAll();
 
+    }
+
+    @Test
+    @DisplayName("투두리스트 여러 정렬조건만족시키는가 쿼리 확인")
+    void getTodos(){
+        String weather = null;
+        LocalDate startDate = LocalDate.parse("2025-04-01");
+        LocalDate endDate =null;
+        Pageable pageable = PageRequest.of(1, 10);
+        todoService.getTodos(pageable.getPageNumber(), pageable.getPageSize(), weather, startDate,endDate);
     }
 
 }

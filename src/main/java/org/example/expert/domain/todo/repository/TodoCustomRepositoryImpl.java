@@ -110,6 +110,7 @@ public class TodoCustomRepositoryImpl implements TodoCustomRepository{
                 .groupBy(todo.id)
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
+                .orderBy(todo.createdAt.desc())
                 .fetch();
 
         // 전체 개수 쿼리

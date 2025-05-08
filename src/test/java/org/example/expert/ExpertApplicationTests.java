@@ -8,6 +8,7 @@ import org.example.expert.domain.auth.dto.response.SigninResponse;
 import org.example.expert.domain.auth.service.AuthService;
 import org.example.expert.domain.todo.repository.TodoRepository;
 import org.example.expert.domain.todo.service.TodoService;
+import org.example.expert.domain.user.entity.User;
 import org.example.expert.domain.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -70,6 +72,45 @@ class ExpertApplicationTests {
         LocalDate endDate =null;
         Pageable pageable = PageRequest.of(1, 10);
         todoService.getTodos(pageable.getPageNumber(), pageable.getPageSize(), weather, startDate,endDate);
+    }
+
+    @Test
+    @DisplayName("대용량 데이터 다루기")
+    void searchNickName(){
+        long startTime = System.currentTimeMillis();
+        String nickname = "ShinyTiger355695136106";
+        userRepository.findUserByNickName(nickname);
+        long endTime = System.currentTimeMillis();
+        System.out.println("걸린 시간: " + (endTime - startTime) + "ms");
+    }
+
+    @Test
+    @DisplayName("유저닉네임랜덤 생성")
+    void generateUser(){
+        String[] ADJECTIVES = {
+                "Happy", "Brave", "Clever", "Fast", "Silent", "Shiny", "Lazy", "Wild", "Quick", "Calm"
+        };
+
+        String[] NOUNS = {
+                "Tiger", "Moon", "River", "Fox", "Bear", "Sky", "Lion", "Tree", "Star", "Penguin"
+        };
+        Random random = new Random();
+        int idx = 0;
+        while (idx < 1_000_000) {
+            String adjective = ADJECTIVES[random.nextInt(ADJECTIVES.length)];
+            String noun = NOUNS[random.nextInt(NOUNS.length)];
+            int number = random.nextInt(1_000_000); // 0 ~ 999999
+
+            String nickname = adjective + noun + String.format("%06d", number) + idx;
+            String email = nickname + "@test.com";
+            String password = "test";
+            String userRole = "user";
+
+            SignupRequest signupRequest = new SignupRequest(email, password, userRole, nickname);
+            authService.signup(signupRequest);
+            idx++;
+        }
+
     }
 
 }

@@ -22,27 +22,28 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity(prePostEnabled = true)  // preAuthorize 설정시
 public class SecurityConfig {
 
-    private final JwtUtil jwtUtil;
-    private final CustomDetailService customDetailService;
+    private final JwtFilter jwtFilter;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
+        http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(authorize -> authorize
+                        // 인증이 필요없는 공개 API
                         .requestMatchers("/auth/**").permitAll()
+                        // 특정 권한이 필요한 API
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        // 나머지 모든 요청은 인증 필요
                         .anyRequest().authenticated())
-                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
-    }
-
-    @Bean
-    public JwtFilter jwtFilter() {
-        return new JwtFilter(jwtUtil, customDetailService);
     }
 }

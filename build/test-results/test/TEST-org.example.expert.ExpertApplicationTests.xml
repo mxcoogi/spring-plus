@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.expert.ExpertApplicationTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-05-10T08:41:15.458Z" hostname="t2024-m0189ui-MacBookAir.local" time="0.47">
+  <properties/>
+  <testcase name="로그인후 토큰에서 닉네임 얻기" classname="org.example.expert.ExpertApplicationTests" time="0.403"/>
+  <testcase name="대용량 데이터 다루기" classname="org.example.expert.ExpertApplicationTests" time="0.019"/>
+  <testcase name="contextLoads()" classname="org.example.expert.ExpertApplicationTests" time="0.001"/>
+  <testcase name="투두리스트 여러 정렬조건만족시키는가 쿼리 확인" classname="org.example.expert.ExpertApplicationTests" time="0.045"/>
+  <system-out><![CDATA[17:41:13.300 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.expert.ExpertApplicationTests]: ExpertApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:41:13.345 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.expert.ExpertApplication for test class org.example.expert.ExpertApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2025-05-10T17:41:13.485+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : Starting ExpertApplicationTests using Java 17.0.15 with PID 12583 (started by t2024-m0189 in /Users/t2024-m0189/dev/spring-plus)
+2025-05-10T17:41:13.485+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-05-10T17:41:13.746+09:00  INFO 12583 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-10T17:41:13.774+09:00  INFO 12583 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2025-05-10T17:41:14.023+09:00  INFO 12583 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-10T17:41:14.039+09:00  INFO 12583 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-10T17:41:14.049+09:00  INFO 12583 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-10T17:41:14.147+09:00  INFO 12583 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-10T17:41:14.156+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-10T17:41:14.278+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@729d6ee2
+2025-05-10T17:41:14.279+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-10T17:41:14.303+09:00  WARN 12583 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-10T17:41:14.674+09:00  INFO 12583 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-10T17:41:14.738+09:00  INFO 12583 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-10T17:41:14.950+09:00  INFO 12583 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-10T17:41:15.196+09:00  INFO 12583 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customDetailService
+2025-05-10T17:41:15.453+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : Started ExpertApplicationTests in 2.055 seconds (process running for 2.493)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, email, modified_at, nick_name, password, user_role) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.nick_name=?
+걸린 시간: 16ms
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.contents,
+        t1_0.created_at,
+        t1_0.modified_at,
+        t1_0.title,
+        t1_0.user_id,
+        t1_0.weather 
+    from
+        todos t1_0 
+    where
+        t1_0.modified_at>=? 
+    order by
+        t1_0.modified_at desc 
+    limit
+        ?, ?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        todos t1_0 
+    where
+        t1_0.modified_at>=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

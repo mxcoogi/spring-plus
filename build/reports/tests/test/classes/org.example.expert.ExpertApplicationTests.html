@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ExpertApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ExpertApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.example.expert.html">org.example.expert</a> &gt; ExpertApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.468s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">contextLoads()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">로그인후 토큰에서 닉네임 얻기</td>
+<td class="success">getNickName()</td>
+<td class="success">0.403s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">투두리스트 여러 정렬조건만족시키는가 쿼리 확인</td>
+<td class="success">getTodos()</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">대용량 데이터 다루기</td>
+<td class="success">searchNickName()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>17:41:13.300 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.expert.ExpertApplicationTests]: ExpertApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:41:13.345 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.expert.ExpertApplication for test class org.example.expert.ExpertApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2025-05-10T17:41:13.485+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : Starting ExpertApplicationTests using Java 17.0.15 with PID 12583 (started by t2024-m0189 in /Users/t2024-m0189/dev/spring-plus)
+2025-05-10T17:41:13.485+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-05-10T17:41:13.746+09:00  INFO 12583 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-10T17:41:13.774+09:00  INFO 12583 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2025-05-10T17:41:14.023+09:00  INFO 12583 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-10T17:41:14.039+09:00  INFO 12583 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-10T17:41:14.049+09:00  INFO 12583 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-10T17:41:14.147+09:00  INFO 12583 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-10T17:41:14.156+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-10T17:41:14.278+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@729d6ee2
+2025-05-10T17:41:14.279+09:00  INFO 12583 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-10T17:41:14.303+09:00  WARN 12583 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-10T17:41:14.674+09:00  INFO 12583 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-10T17:41:14.738+09:00  INFO 12583 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-10T17:41:14.950+09:00  INFO 12583 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-10T17:41:15.196+09:00  INFO 12583 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customDetailService
+2025-05-10T17:41:15.453+09:00  INFO 12583 --- [    Test worker] o.example.expert.ExpertApplicationTests  : Started ExpertApplicationTests in 2.055 seconds (process running for 2.493)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, email, modified_at, nick_name, password, user_role) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.modified_at,
+        u1_0.nick_name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.nick_name=?
+걸린 시간: 16ms
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.contents,
+        t1_0.created_at,
+        t1_0.modified_at,
+        t1_0.title,
+        t1_0.user_id,
+        t1_0.weather 
+    from
+        todos t1_0 
+    where
+        t1_0.modified_at&gt;=? 
+    order by
+        t1_0.modified_at desc 
+    limit
+        ?, ?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        todos t1_0 
+    where
+        t1_0.modified_at&gt;=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at 2025. 5. 10. 오후 5:41:15</p>
+</div>
+</div>
+</body>
+</html>

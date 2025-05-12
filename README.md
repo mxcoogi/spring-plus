@@ -6,6 +6,10 @@ QueryDSL을 사용해 조건 만족
 ![](image/lv1-3.png)
 
 
+## lv3-12 : AWS사용
+1. [ping api](http://43.203.74.38:8080/auth/ping)
+2. ec2 ![](/image/ec2.png)
+3. rds ![](/image/rds.png)
 ## lv3-13 : 대용량 데이터 처리
 1. user 데이터 100만개 생성 ![](image/dataset.png)
 2. 기본조회 ![](image/normalsearch.png)

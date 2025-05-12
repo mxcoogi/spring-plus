@@ -27,7 +27,7 @@ public class AuthController {
     public SigninResponse signin(@Valid @RequestBody SigninRequest signinRequest) {
         return authService.signin(signinRequest);
     }
-    @GetMapping("/ping")
+    @GetMapping("/auth/ping")
     public String ping(){
         return "pong";
     }
